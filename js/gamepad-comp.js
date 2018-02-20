@@ -9,15 +9,17 @@ class GamepadWrapper extends HTMLElement {
 
         var wrapper = document.createElement('div');
         wrapper.setAttribute('class', 'wrapper');
+        wrapper.classList.add('not_connected');
         //gamepad icon
         var gpadicon = document.createElement('img');
         gpadicon.setAttribute('src', '/img/gamepadIcon.svg');
                 
         //styling for shadow dom
         var style = document.createElement('style');
+        
         style.textContent = '.wrapper {'+
-                                'width: 2em;' +
-                                'padding: .5em;' +
+                                'width: 70%;' +
+                                'padding: 15%;' +
                                 'color: white;' +  
                                 'transition: color .5s ease-in, background-color .5s ease-in;' +
                                 '}'+
@@ -44,6 +46,7 @@ class GamepadWrapper extends HTMLElement {
             window.addEventListener("gamepaddisconnected", function(e) { gamepadHandler(e, false); }, false);
         }
         else{
+            document.getElementsByTagName('game-pad')[0].shadowRoot.querySelector('.wrapper').classList.remove('not_connected');
             document.getElementsByTagName('game-pad')[0].shadowRoot.querySelector('.wrapper').classList.add('not_supported');
         }
     }
