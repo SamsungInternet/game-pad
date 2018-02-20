@@ -12,7 +12,7 @@ class GamepadWrapper extends HTMLElement {
         wrapper.classList.add('not_connected');
         //gamepad icon
         var gpadicon = document.createElement('img');
-        gpadicon.setAttribute('src', '../img/gamepadIcon.svg');
+        gpadicon.setAttribute('src', 'https://raw.githubusercontent.com/SamsungInternet/game-pad/master/img/gamepadIcon.svg');
                 
         //styling for shadow dom
         var style = document.createElement('style');
