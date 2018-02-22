@@ -1,5 +1,6 @@
 var gamepads = {};
 
+//game-pad web component class
 class GamepadWrapper extends HTMLElement {
 
     constructor(){
@@ -39,6 +40,7 @@ class GamepadWrapper extends HTMLElement {
         this.init_API();
     }
 
+    //attaches the gamepad events to the window. responsible for changing styles upon changing states
     init_API(){
         if(navigator.getGamepads != undefined){
             //attach events
@@ -52,6 +54,7 @@ class GamepadWrapper extends HTMLElement {
     }
 }
 
+//handles the connection and disconnection of gamepads, by adding them to the gamepads object
 function gamepadHandler(event, connecting) {
     var gamepad = event.gamepad;
     if (connecting) {
@@ -67,4 +70,5 @@ function gamepadHandler(event, connecting) {
     }
 }
 
+//registers the custom element to be used in the HTML
 customElements.define('game-pad', GamepadWrapper);
