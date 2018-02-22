@@ -18,21 +18,16 @@ class GamepadWrapper extends HTMLElement {
         //styling for shadow dom
         var style = document.createElement('style');
         
-        style.textContent = '.wrapper {'+
-                                'width: 70%;' +
-                                'padding: 15%;' +
-                                'color: white;' +  
-                                'transition: color .5s ease-in, background-color .5s ease-in;' +
-                                '}'+
-                                '.connected {'+
-                                'background-color: #00C800;'+
-                                '}'+
-                                '.not_connected {'+
-                                'background-color: #FFC800;'+
-                                '}'+
-                                '.not_supported {'+
-                                'background-color: #FF0000;'+
-                                '}';
+        style.textContent = `.wrapper {
+                                width: 70%;
+                                padding: 15%;
+                                color: white;
+                                transition: color .5s ease-in, background-color .5s ease-in;
+                            }
+                            .connected {background-color: #00C800;}
+                            .not_connected {background-color: #FFC800;}
+                            .not_supported {background-color: #FF0000;}
+                            `;
         wrapper.appendChild(gpadicon);                        
         shadow.appendChild(style);
         shadow.appendChild(wrapper);
